@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import SliderIndicators from "./SliderIndicators";
 
 const images = [
@@ -22,14 +22,8 @@ export default function Slider() {
     });
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      slideToNext();
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [current]);
 
-  const slideToNext = () => {
+  const slideToNext = useCallback(() => {
     if (isSliding) return;
     setDirection("next");
     setPrevCurrent(current);
@@ -39,7 +33,14 @@ export default function Slider() {
       setIsSliding(false);
       setDirection(null);
     }, 500);
-  };
+  }, [current, isSliding]); // залежності, що використовуються всередині slideToNext
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      slideToNext();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [slideToNext]);
 
   const slideToPrev = () => {
     if (isSliding) return;
@@ -70,6 +71,7 @@ export default function Slider() {
     center: "-50%",
     right: "calc(-50% + 1200px)",
   };
+
 
   const referenceIndex = isSliding ? prevCurrent : current;
   const leftIndex = (referenceIndex - 1 + images.length) % images.length;
