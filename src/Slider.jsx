@@ -33,8 +33,8 @@ export default function Slider() {
       setIsSliding(false);
       setDirection(null);
     }, 500);
-  }, [current, isSliding]); // залежності, що використовуються всередині slideToNext
-
+  }, [current, isSliding]);
+  
   useEffect(() => {
     const interval = setInterval(() => {
       slideToNext();

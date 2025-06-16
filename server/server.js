@@ -18,7 +18,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
 });
 
 // Всі новини
-app.get('/api/news', (req, res) => {
+app.get('/news', (req, res) => {
   const query = 'SELECT * FROM news ORDER BY date DESC';
   db.all(query, [], (err, rows) => {
     if (err) {
@@ -30,7 +30,7 @@ app.get('/api/news', (req, res) => {
 });
 
 // Одна новина за slug
-app.get('/api/news/:slug', (req, res) => {
+app.get('/news/:slug', (req, res) => {
   const query = 'SELECT * FROM news WHERE slug = ? LIMIT 1';
   db.get(query, [req.params.slug], (err, row) => {
     if (err) {
