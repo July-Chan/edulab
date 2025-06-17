@@ -12,9 +12,9 @@ export default function Footer() {
           <h3>Навігація</h3>
           <ul>
             <li><a href="/home">Головна</a></li>
-            <li><a href="/about">Про нас</a></li>
+            <li><a href="/about">Про сайт</a></li>
             <li><a href="/news">Новини</a></li>
-            <li><a href="/gallery">Галерея</a></li>
+            <li><a href="/gallery">Галерея картино</a></li>
             <li><a href="/contact">Контакти</a></li>
           </ul>
         </nav>
