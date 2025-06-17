@@ -269,7 +269,6 @@ body {
   .nav-menu {
     position: absolute;
     top: 100%;
-    right: 0;
     background-color: #1B24D5;
     color: #ffffff;
     flex-direction: column;
@@ -338,20 +337,33 @@ body {
 
   .nav-menu {
     position: absolute;
+    margin-top: 10px;
     top: 100%;
-    right: 0;
+    right: 0px;
+    left: auto;
     background-color: #1B24D5;
     color: #ffffff;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 8px;
+    padding: 12px 12px;
     gap: 12px;
     border-radius: 0 0 16px 16px;
     display: none;
-    width: 100%;
-    padding-bottom: 24px;
+    box-sizing: border-box;
     z-index: 1;
+    width: auto;
   }
+
+  .nav-link {
+    width: 100%;
+    word-break: break-word;
+  }
+  .mobile-auth-buttons .signup,
+  .mobile-auth-buttons .login {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
 
   .nav-menu.open {
     display: flex;
@@ -1485,171 +1497,28 @@ strong {
 
 
 @media screen and (max-width: 480px) {
-  .title {
-    font-size: 24px;
+  .burger-menu {
+    width: 100vw;
+    left: 0;
+    right: 0;
+    padding: 20px;
   }
 
-  .description {
-    font-size: 16px;
+  .menu-background {
+    background-color: #1B24D5; /* або твій основний колір */
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: fixed;
+    z-index: 999;
   }
 
-  .header {
-    border-radius: 0 0 30px 30px;
-  }
-
-  .slider-container {
-    height: 220px;
-    margin: 5px auto;
-  }
-
-  .slide,
-  .slide-center,
-  .slide-left,
-  .slide-right {
-    width: 95%;
-    height: 220px;
-  }
-
-  .slide-left {
-    transform: translateX(calc(-50% - 100%)) scale(0.92);
-  }
-
-  .slide-right {
-    transform: translateX(calc(-50% + 100%)) scale(0.92);
-  }
-
-  .indicator {
-    width: 25px;
-    height: 12px;
-    border: 3px solid #1B24D5;
-  }
-
-  .footer-container {
-    gap: 20px;
-    padding: 10px;
-  }
-
-  .footer-logo {
-    width: 100px;
-  }
-
-  .footer-copy {
-    font-size: 0.7rem;
-  }
-
-  .news-title {
-    font-size: 22px;
-  }
-
-  .news-heading {
-    font-size: 14px;
-  }
-
-  .news-description {
-    font-size: 13px;
-  }
-
-  .news-button {
-    font-size: 13px;
-    padding: 10px 12px;
-  }
-
-  .news-section {
-    max-width: 100%;
-    padding: 0 10px;
-  }
-
-  .news-image-container {
-    width: 100%;
-    height: auto;
-  }
-
-  .news-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .section-title,
-  .team-title {
-    font-size: 24px;
-  }
-
-  .experiment-item,
-  .exp-center,
-  .exp-side {
-    width: 95vw;
-    max-width: 100%;
-  }
-
-  .experiment-title {
+  .menu-item {
     font-size: 18px;
-  }
-
-  .overlay {
-    font-size: 16px;
-    padding: 8px;
-  }
-
-  .team-member-img {
-    width: 100%;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .gallery-image {
-    max-width: 90%;
-    height: 140px;
-  }
-
-  .pagination-number,
-  .pagination-arrow {
-    font-size: 12px;
-    padding: 4px 8px;
-  }
-
-  .about-container ul li {
-    font-size: 14px;
-    padding-left: 20px;
-  }
-
-  .about-container ul li::before {
-    font-size: 14px;
-  }
-
-  .final-message {
-    font-size: 18px;
-  }
-
-  .news-detail h1 {
-    font-size: 24px;
-  }
-
-  .news-detail .date {
-    font-size: 11px;
-  }
-
-  .news-detail img {
-    max-height: 200px;
-    border-radius: 20px;
-  }
-
-  .back-button {
-    font-size: 13px;
-    padding: 6px 16px;
-  }
-
-  .back-button::before {
-    font-size: 14px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #1B24D5;
-  }
-
-  ::-webkit-scrollbar-thumb:active {
-    background: #0e158a;
+    text-align: center;
+    padding: 15px 0;
   }
 }
