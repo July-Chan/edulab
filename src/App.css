@@ -1402,17 +1402,15 @@ strong {
     transform: scale(1.05);
   }
 
-    .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    justify-items: center;
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
   }
 
   .gallery-image {
     width: 100%;
-    max-width: 315px;
-    height: 160px;
-    border-width: 6px;
-    border-radius: 25px;
+    height: auto;
+    aspect-ratio: 16 / 10;
   }
 
   .pagination-number,
@@ -1533,5 +1531,16 @@ strong {
 
     .news-image-container:active{
     transform: scale(1.05);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
   }
 }
